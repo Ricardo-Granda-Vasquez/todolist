@@ -7,8 +7,6 @@ const initialState = {
     logs : []
 };
 
-let counter = 1;
-
 export function LogReducer(state = initialState, action) {
     console.log(action);
     switch (action.type) {
