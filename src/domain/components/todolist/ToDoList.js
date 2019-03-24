@@ -3,6 +3,7 @@ import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 import TodoInput from "./TodoInput";
 import * as Actions from "./TodoActions"
+import {addLog} from "../logs/LogActions";
 import {bindActionCreators} from 'redux';
 
 class TodoList extends React.Component {
@@ -21,6 +22,12 @@ class TodoList extends React.Component {
 
     addTodo(text) {
         this.props.actions.addTodo(text);
+
+        let date = new Date();
+        let dateString = date.toString();
+
+        let textLog = dateString + ' ' + text + ' was created';
+        addLog(textLog);
 
     }
 

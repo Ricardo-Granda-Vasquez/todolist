@@ -1,0 +1,5 @@
+export const LogConstantsAdd = {
+    LOG_ADD_REQUEST: 'LOG_ADD_REQUEST',
+    LOG_ADD_SUCCESS: 'LOG_ADD_SUCCESS',
+    LOG_ADD_FAILURE: 'LOG_ADD_FAILURE'
+};
