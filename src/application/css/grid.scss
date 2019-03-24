@@ -14,21 +14,26 @@ body {
 
     .height-total {
        height:50%;
-      overflow-y: scroll;
+       overflow-y: scroll;
     }
 
     .width-lg-100 {
       width:100%;
+      overflow: hidden;
     }
 
     .width-lg-70 {
       width:70%;
       float:left;
+      overflow: hidden;
+      position:relative;
     }
 
     .width-lg-30 {
       width:30%;
       float:left;
+      overflow: hidden;
+      position:relative;
     }
 
   }

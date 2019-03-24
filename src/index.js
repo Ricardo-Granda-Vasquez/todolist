@@ -1,13 +1,17 @@
 import '@babel/polyfill'
 import React from 'react';
 import ReactDOM from 'react-dom';
+import configureStore from './application/configureStore';
 import "./application/css/App.scss"
 import App from './domain/App';
+import {Provider} from 'react-redux';
+
+let store = configureStore();
 
 ReactDOM.render(
-            <div>
+            <Provider store={store}>
                  <App>
                  </App>
-            </div>,
+            </Provider>,
     document.getElementById('app')
 );
