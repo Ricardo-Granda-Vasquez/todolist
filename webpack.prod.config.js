@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
     stats: 'none',
@@ -54,7 +55,8 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: './public/css/app.bundle.css',
-        })
+            chunkFilename: "./public/css/app.bundle.min.css"
+        }),
     ],
     optimization: {
         minimizer: [
@@ -67,6 +69,7 @@ module.exports = {
                     },
                 },
             }),
+            new OptimizeCSSAssetsPlugin({})
         ]
     }
 };
