@@ -44,10 +44,10 @@
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
-    "start": "webpack-dev-server --host 0.0.0.0 --port 3000 --mode development --open --hot",
+    "start": "webpack-dev-server --host 0.0.0.0 --port 3000 --mode development --open --hot --config webpack.dev.config.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "build": "webpack --mode production"
+    "build": "webpack --config webpack.prod.config.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",

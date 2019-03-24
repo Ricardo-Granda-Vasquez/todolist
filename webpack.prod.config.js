@@ -4,10 +4,6 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 
-const devMode = process.env.NODE_ENV !== 'production'
-
-console.log(devMode);
-
 module.exports = {
     stats: 'none',
     entry: [
@@ -28,7 +24,7 @@ module.exports = {
             {
                 test: /\.(s*)css$/,
                 use: [
-                    devMode? 'style-loader':MiniCssExtractPlugin.loader,
+                     MiniCssExtractPlugin.loader,
                     'css-loader',
                     'sass-loader'
                 ],

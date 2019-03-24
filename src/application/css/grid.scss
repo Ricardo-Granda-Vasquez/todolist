@@ -1,0 +1,36 @@
+body {
+  background: gray;
+
+  .content {
+    max-width:960px;
+    margin: 20px auto;
+    width:100%;
+    background:white;
+    overflow:hidden;
+
+    .main {
+       min-height:500px;
+    }
+
+    .height-total {
+       height:50%;
+      overflow-y: scroll;
+    }
+
+    .width-lg-100 {
+      width:100%;
+    }
+
+    .width-lg-70 {
+      width:70%;
+      float:left;
+    }
+
+    .width-lg-30 {
+      width:30%;
+      float:left;
+    }
+
+  }
+}
+
