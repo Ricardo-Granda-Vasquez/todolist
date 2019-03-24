@@ -1,13 +1,11 @@
 import { combineReducers } from 'redux';
 import {
-    addTodo,
-    deleteTodo
+    ReducerActions
 } from '../domain/components/todolist/TodoReducer'
 
 
 const rootReducer = combineReducers({
-    addTodo,
-    deleteTodo
+    ReducerActions
 });
 
 export default rootReducer;

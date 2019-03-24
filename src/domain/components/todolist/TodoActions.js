@@ -25,6 +25,8 @@ export function addTodo(text) {
 
 export function deleteTodo(id) {
 
+    console.log(id);
+
     return dispatch => {
         dispatch(request({id}));
 
@@ -34,10 +36,10 @@ export function deleteTodo(id) {
     };
 
     function request(id) {
-        return {type: todoConstantsDelete.TODO_DELETE_REQUEST, id}
+        return {type: todoConstantsDelete.TODO_DELETE_REQUEST, id: id}
     }
 
     function success(id) {
-        return {type: todoConstantsDelete.TODO_DELETE_SUCCESS, id}
+        return {type: todoConstantsDelete.TODO_DELETE_SUCCESS, id: id}
     }
 }

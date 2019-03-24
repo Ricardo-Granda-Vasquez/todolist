@@ -15,21 +15,19 @@ class TodoList extends React.Component {
             todos:[]
         }
 
-
         this.addTodo = this.addTodo.bind(this);
-        this.deleteTodo = this.deleteTodo.bind(this);
     }
 
 
     addTodo(text) {
-
         this.props.actions.addTodo(text);
 
     }
 
     deleteTodo(id) {
+        console.log(id);
 
-        //logic of add
+        this.props.actions.deleteTodo(id);
 
     }
 
@@ -41,31 +39,24 @@ class TodoList extends React.Component {
     }
 
     componentWillReceiveProps(props){
-
         console.log(props);
-
-        if(props !== this.state){
-            this.setState({
-                 todos:props.todos
-            })
-        }
-
+       this.setState({
+           todos:props.todos
+       })
     }
-
 
     render(){
 
-
-        const {todos} = this.props;
+        const {todos} = this.state;
 
         console.log(todos);
-
+        let that = this;
         return (
             <article className='width-lg-70'>
                 <div className="height-total margin-left-20 margin-right-20 padding-top-20 padding-bottom-20 border-simple">
                     <ul>
                         {todos.map(todo => (
-                           <li className="station" key={todo.id}>{todo.title} <button>X</button></li>
+                           <li className="station" key={todo.id}>{todo.title} <button onClick={() => this.deleteTodo(todo.id)}>X</button></li>
                         ))}
                     </ul>
                     <TodoInput addTodo={this.addTodo}/>
@@ -80,8 +71,10 @@ class TodoList extends React.Component {
 
 function mapStateToProps(state,ownProps){
 
+    console.log(state);
+
     return {
-        todos:state.addTodo.todos,
+        todos:state.ReducerActions.todos,
     }
 }
 

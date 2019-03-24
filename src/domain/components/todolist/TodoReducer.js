@@ -10,17 +10,12 @@ const initialState = {
 
 let counter = 1;
 
-export function addTodo(state = initialState, action) {
+export function ReducerActions(state = initialState, action) {
     switch (action.type) {
         case todoConstantsAdd.TODO_ADD_REQUEST:
-
-            return {
-                isLoading: true,
-                todos: initialState.todos,
-            };
+            return {...state};
+            break;
         case todoConstantsAdd.TODO_ADD_SUCCESS:
-
-            console.log(action);
 
             let newTodo ={
                 id:counter,
@@ -31,35 +26,36 @@ export function addTodo(state = initialState, action) {
 
             return {
                 ...state,
-                todos: [...initialState.todos, newTodo]
+                todos: [...state.todos, newTodo]
             };
 
-
+            break;
         case todoConstantsAdd.TODO_ADD_FAILURE:
             return {
                 isLoading: false,
                 todos:[]
             };
-        default:
-            return state
-    }
-}
-
-export function deleteTodo(state = initialState, action) {
-    switch (action.type) {
+            break;
         case todoConstantsDelete.TODO_DELETE_REQUEST:
             return {
-                isLoading:true,
-                todoList:{}
+                ...state
             };
+            break;
         case todoConstantsDelete.TODO_DELETE_SUCCESS:
+            console.log(state);
+            console.log(state.todos.filter(item => item.id !== action.id));
+
             return {
-                isLoading: false,
-                todoList: action.todoResponse,
+                ...state,
+                todos: state.todos.filter(item => item.id !== action.id)
             };
+            break;
         case todoConstantsDelete.TODO_DELETE_FAILURE:
             return state;
+            break;
         default:
             return state
+            break;
+
     }
 }
