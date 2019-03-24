@@ -8,15 +8,15 @@ class Logs extends React.Component {
 
     render(){
 
+        const {logs} = this.props;
+
         return (
             <aside className='width-lg-30'>
                 <div className="height-total margin-left-20 margin-right-20 padding-top-20 padding-bottom-20 border-simple">
                     <ul>
-                        <li>Logs 1</li>
-                        <li>Logs 1</li>
-                        <li>Logs 1</li>
-                        <li>Logs 1</li>
-                        <li>Logs 1</li>
+                        {logs.map(todo => (
+                            <li className="station" key={todo.id}>{todo.log}</li>
+                        ))}
                     </ul>
                 </div>
             </aside>
@@ -28,11 +28,8 @@ class Logs extends React.Component {
 }
 
 function mapStateToProps(state,ownProps){
-
-    console.log(state);
-
     return {
-        todos:[],
+        logs:state.LogReducer.logs,
     }
 }
 

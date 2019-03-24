@@ -42,9 +42,6 @@ export function ReducerActions(state = initialState, action) {
             };
             break;
         case todoConstantsDelete.TODO_DELETE_SUCCESS:
-            console.log(state);
-            console.log(state.todos.filter(item => item.id !== action.id));
-
             return {
                 ...state,
                 todos: state.todos.filter(item => item.id !== action.id)

@@ -7,24 +7,26 @@ const initialState = {
     logs : []
 };
 
+let counter = 1;
+
 export function LogReducer(state = initialState, action) {
-    console.log(action);
     switch (action.type) {
         case LogConstantsAdd.LOG_ADD_REQUEST:
             return {...state};
             break;
         case LogConstantsAdd.LOG_ADD_SUCCESS:
 
-            let newTodo ={
+            let newLog ={
                 id:counter,
-                title:action.todo
+                log:action.log
             };
 
             counter++;
 
             return {
                 ...state,
-                todos: [...state.todos, newTodo]
+                isLoading:false,
+                logs: [...state.logs, newLog]
             };
 
             break;

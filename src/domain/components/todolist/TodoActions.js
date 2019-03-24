@@ -6,8 +6,8 @@ import {
 export function addTodo(text) {
 
     return dispatch => {
-        dispatch(request({text}));
 
+        dispatch(request({text}));
         setTimeout(function(){
             dispatch(success(text))
         }, 1000)

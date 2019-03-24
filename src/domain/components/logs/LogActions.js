@@ -4,10 +4,10 @@ LogConstantsAdd
 
 export function addLog(text) {
 
-    console.log(text);
-
     return dispatch => {
-         dispatch(success(text));
+        setTimeout(function(){
+            dispatch(success(text))
+        }, 1500)
     };
 
     function success(text) {
