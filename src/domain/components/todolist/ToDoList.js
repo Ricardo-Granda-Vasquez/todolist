@@ -24,7 +24,7 @@ class TodoList extends React.Component {
 
     getLogDate(){
         let date = new Date();
-        return date.toString();
+        return date.toUTCString();
     }
 
     addTodo(text) {
@@ -70,6 +70,7 @@ class TodoList extends React.Component {
         return (
             <article className='width-lg-80'>
                 <div className="height-total margin-left-20 margin-right-20 padding-top-20 padding-bottom-20 padding-right-20 border-simple">
+                    <h2 className="margin-left-20">Todo List </h2>
                     <ul className="no-style-list padding-left-10">
                         {todos.map(todo => (
                             <li className="todo-list-element padding-top-10 padding-bottom-10 margin-top-10 border-simple"  key={todo.id}>
