@@ -23,5 +23,41 @@
 .text-right {text-align:right !important}
 
 //borders
-.border-simple {border:1px solid grey}
-.border-bold {border:5px solid grey}
+.border-simple {border:1px solid #ffc107;border-radius:5px;}
+.border-bold {border:5px solid #ffc107}
+
+// Lists
+.no-style-list {
+  list-style-type:none !important;
+  margin-left:0px !important;
+
+  li {
+    &.todo-list-element {
+      overflow:hidden;
+      width:100%;
+      position:relative;
+      * {
+         float:left;
+      }
+
+      input {
+        margin-top:7px;
+      }
+      span{
+         &.todo-text {
+           display: block;
+           width:85%;
+           @media (max-width:520px) {
+             width:80%;
+           }
+           @media (max-width:400px) {
+             width:70%;
+           }
+         }
+      }
+    }
+
+  }
+
+}
+

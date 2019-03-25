@@ -38,9 +38,9 @@ class TodoInput extends React.Component {
     render() {
 
         return (
-            <div className='margin-left-20 input-positioning-absolute margin-bottom-20'>
+            <div className='margin-left-20 input-positioning-absolute margin-bottom-20 margin-right-20'>
                 <input type="text" className="todo-list-input" onChange={this.setValue} placeholder="ToDo PlaceHolder"/>
-                <button className="add-todo padding-left-20" onClick={this.addTodo}>+</button>
+                <div className="add-todo button-custom  padding-left-20" onClick={this.addTodo}> + </div>
             </div>
         );
 

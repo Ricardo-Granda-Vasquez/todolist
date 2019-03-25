@@ -11,8 +11,9 @@ class Logs extends React.Component {
         const {logs} = this.props;
 
         return (
-            <aside className='width-lg-30'>
+            <aside className='width-lg-20'>
                 <div className="height-total margin-left-20 margin-right-20 padding-top-20 padding-bottom-20 padding-right-20 border-simple">
+                    <h2 className="margin-left-20">Log List </h2>
                     <ul>
                         {logs.map(todo => (
                             <li className="station" key={todo.id}>{todo.log}</li>
