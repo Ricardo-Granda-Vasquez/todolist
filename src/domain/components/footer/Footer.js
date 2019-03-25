@@ -5,7 +5,7 @@ const Footer = () => {
 
     return (
         <footer className='width-lg-100'>
-            <p className="margin-top-20 margin-bottom-20 text-center">All rights reserved</p>
+            <p className="margin-top-20 margin-bottom-20 text-center">Ofertia Exercise</p>
         </footer>
     );
 

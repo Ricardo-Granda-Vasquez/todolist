@@ -3,4 +3,56 @@
 .input-positioning-absolute {
   position: absolute;
   bottom:0;
+  width:88%;
+}
+
+input {
+  &.todo-list-input {
+    width:90%;
+    float: left;
+    margin-top: 6px;
+    @media (max-width:520px) {
+      width:80%;
+    }
+    @media (max-width:400px) {
+      width:70%;
+    }
+  }
+}
+
+.button-custom {
+  margin-top: 2px;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  cursor:pointer;
+}
+
+.add-todo {
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid;
+  overflow: hidden;
+  padding: 0px !important;
+  cursor:pointer;
+}
+
+.line{
+  width: 85%;
+  height: 13px;
+  border-bottom: 1px solid black;
+  position: absolute;
+  @media (max-width:520px) {
+    width:80%;
+  }
+  @media (max-width:400px) {
+    width:70%;
+  }
+}
+
+.hidden {
+  display:none !important;
 }

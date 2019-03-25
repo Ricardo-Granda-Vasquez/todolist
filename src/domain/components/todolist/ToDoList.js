@@ -45,6 +45,13 @@ class TodoList extends React.Component {
 
     }
 
+    markTodo(todo){
+
+        let elementToMark = document.getElementById('todo-' + todo.id);
+        elementToMark.classList.toggle('hidden');
+
+    }
+
     componentDidMount(){
         this.setState({
             todos:this.props.todos
@@ -61,11 +68,16 @@ class TodoList extends React.Component {
 
         const {todos} = this.state;
         return (
-            <article className='width-lg-70'>
-                <div className="height-total margin-left-20 margin-right-20 padding-top-20 padding-bottom-20 border-simple">
-                    <ul>
+            <article className='width-lg-80'>
+                <div className="height-total margin-left-20 margin-right-20 padding-top-20 padding-bottom-20 padding-right-20 border-simple">
+                    <ul className="no-style-list padding-left-10">
                         {todos.map(todo => (
-                           <li className="station" key={todo.id}>{todo.title} <button onClick={() => this.deleteTodo(todo)}>X</button></li>
+                            <li className="todo-list-element padding-top-10 padding-bottom-10 margin-top-10 border-simple"  key={todo.id}>
+                                <div class="line hidden margin-left-20" id={'todo-' + todo.id}></div>
+                                <input type="checkbox" className="margin-left-10" onChange={() => this.markTodo(todo)}/>
+                                <span className="todo-text padding-left-10"> {todo.title} </span>
+                                    <button className="button-custom" onClick={() => this.deleteTodo(todo)}>X</button>
+                            </li>
                         ))}
                     </ul>
                     <TodoInput addTodo={this.addTodo}/>
